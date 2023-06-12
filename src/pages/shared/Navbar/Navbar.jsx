@@ -46,7 +46,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end mr-5">
-      <button type="button" className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br     dark:focus:ring-purple-800   shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg btn btn-xl border-0 text-center  ">Log in</button>
+      <Link to={'login'}><button type="button" className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br     dark:focus:ring-purple-800   shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg btn btn-xl border-0 text-center  ">Log in</button></Link>
       </div>
       <label tabIndex={0} className="mr-5 btn btn-ghost btn-circle avatar">
         <div className="w-full rounded-full">

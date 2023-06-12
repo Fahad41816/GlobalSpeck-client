@@ -3,6 +3,8 @@ import Layout from "./pages/Layout/Layout";
 import Home from "./pages/Home/Home";
 import Instructors from './pages/instructor/Instructors'
 import Class from "./pages/class/Class";
+import Login from "./pages/Login/Login";
+import Singup from "./pages/Singup/Singup";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +25,16 @@ const router = createBrowserRouter([
                 path:"/class",
                 element: <Class></Class>,
                 loader: () => { return fetch('http://localhost:5000/Allclasses').then(res=> res.json())}
+            },
+            {
+                path:"/login",
+                element: <Login></Login>
+               
+            },
+            {
+                path:"/singup",
+                element: <Singup></Singup>
+                 
             }
         ]
     }

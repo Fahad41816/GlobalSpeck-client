@@ -15,7 +15,7 @@ const Classcart = ({classes}) => {
                 </a>
                 <div className="p-5">
                     <a href="#">
-                        <h5 className="mb-2 text-2xl font-bold tracking-tight  dark:text-white">{language} language</h5>
+                        <h5 className="mb-2 text-2xl font-bold tracking-tight text-black">{language} language</h5>
                     </a>
                     <div>instructor : {instructor}</div> 
                     <div>Price : {price}</div> 
