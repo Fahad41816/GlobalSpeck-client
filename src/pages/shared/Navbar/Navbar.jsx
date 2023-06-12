@@ -27,9 +27,9 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
-          <Link><li><a className=" font-semibold">HOME</a></li></Link>
-          <Link><li><a className=" font-semibold">INSTRUCTORS</a></li></Link>
-          <Link><li><a className=" font-semibold">CLASSES</a></li></Link>
+          <Link to={'/'}><li><a className=" font-semibold">HOME</a></li></Link>
+          <Link to={'/instractor'}><li><a className=" font-semibold">INSTRUCTORS</a></li></Link>
+          <Link to={'/class'}><li><a className=" font-semibold">CLASSES</a></li></Link>
           <Link><li><a className=" font-semibold">DASHBOARD</a></li></Link>
           </ul>
         </div>
@@ -40,8 +40,8 @@ const Navbar = () => {
       <div className="navbar-center hidden  lg:flex ">
         <ul className="menu menu-horizontal  px-1">
           <Link><li><a className=" font-semibold">HOME</a></li></Link>
-          <Link><li><a className=" font-semibold">INSTRUCTORS</a></li></Link>
-          <Link><li><a className=" font-semibold">CLASSES</a></li></Link>
+          <Link to={'/instractor'}><li><a className=" font-semibold">INSTRUCTORS</a></li></Link>
+          <Link to={"/class"}><li><a className=" font-semibold">CLASSES</a></li></Link>
           <Link><li><a className=" font-semibold">DASHBOARD</a></li></Link>
         </ul>
       </div>
