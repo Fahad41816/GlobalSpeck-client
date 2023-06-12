@@ -2,7 +2,7 @@ import React from 'react';
 
 const Instructorcart = ({instuctor}) => {
 
-    console.log(instuctor)
+    
 
     const {email, image, instructorName} = instuctor
 
