@@ -1,0 +1,103 @@
+[
+    {
+      "language": "French",
+      "instructor": "Jeanne Dupont",
+      "availableSeats": 10,
+      "price": 150,
+      "enrollStudents": 7,
+      "image": "https://www.shutterstock.com/image-vector/french-typographic-header-language-school-260nw-1788870020.jpg",
+      "schedule": "Monday, Wednesday, Friday 6:00 PM - 8:00 PM",
+      "description": "Learn the beautiful French language with an experienced instructor. This class covers speaking, listening, reading, and writing skills. No prior knowledge of French is required."
+    },
+    {
+      "language": "Spanish",
+      "instructor": "Alejandro Ramirez",
+      "availableSeats": 8,
+      "price": 120,
+      "enrollStudents": 3,
+      "image": "https://www.shutterstock.com/image-vector/spanish-learning-typographic-header-concept-260nw-1775098481.jpg",
+      "schedule": "Tuesday, Thursday 7:00 PM - 9:00 PM",
+      "description": "Join us in this lively Spanish class and immerse yourself in the vibrant culture and language. Develop your conversation skills, vocabulary, and grammar in a friendly environment."
+    },
+    {
+      "language": "German",
+      "instructor": "Hans Schmidt",
+      "availableSeats": 12,
+      "price": 180,
+      "enrollStudents": 8,
+      "image": "https://media.istockphoto.com/id/1096979810/vector/german-hand-drawn-doodles-and-lettering.jpg?s=612x612&w=0&k=20&c=TInCRUy_IBUuHZmj3j3MJbsrmij2p2-7-i7wI4gJGI4=",
+      "schedule": "Monday, Wednesday 6:30 PM - 8:30 PM",
+      "description": "Experience the precision and richness of the German language. This class focuses on building a strong foundation in grammar, vocabulary, and pronunciation. Suitable for beginners and intermediate learners."
+    },
+    {
+      "language": "Italian",
+      "instructor": "Isabella Rossi",
+      "availableSeats": 10,
+      "price": 140,
+      "enrollStudents": 9,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLZBQfvd0Guakk_dX9JEJ6HCe99IKpSo6TDYNDskANaQ&s",
+      "schedule": "Tuesday, Thursday 6:00 PM - 8:00 PM",
+      "description": "Indulge in the beauty of the Italian language. This class offers interactive lessons to help you master Italian grammar, conversation, and culture. All levels are welcome."
+    },
+    {
+      "language": "Mandarin Chinese",
+      "instructor": "Li Wei",
+      "availableSeats": 15,
+      "price": 160,
+      "enrollStudents": 60,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdwWdKGFi-JSKS5swjnEPcoIz-KfP1B_mG_kMTWYTeRQUE9ySBP7bws_oKyWxmWabg1Zg&usqp=CAU",
+      "schedule": "Monday, Wednesday, Friday 5:30 PM - 7:30 PM",
+      "description": "Embark on a journey to learn Mandarin Chinese. Our class provides comprehensive instruction in Chinese characters, pronunciation, and conversation. Open to beginners and intermediate learners."
+    },
+    {
+      "language": "Japanese",
+      "instructor": "Yuki Tanaka",
+      "availableSeats": 10,
+      "price": 170,
+      "enrollStudents": 87,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqj6G9SivqszKedxTzI6RNUALmAxT1kL1YssPrVfKr9w&s",
+      "schedule": "Tuesday, Thursday 6:30 PM - 8:30 PM",
+      "description": "Immerse yourself in the fascinating world of Japanese language and culture. This class focuses on developing your speaking, listening, reading, and writing skills. All levels are welcome."
+    },
+    {
+      "language": "Arabic",
+      "instructor": "Ahmed Khalil",
+      "availableSeats": 8,
+      "price": 140,
+      "enrollStudents": 52,
+      "image": "https://media.istockphoto.com/id/1086204868/vector/international-arabic-language-day-18th-of-december-arabic-language-day-arabic-calligraphy.jpg?s=612x612&w=0&k=20&c=DK-Qx7jHFsnKvt6o_2fiLEZHAc71IGMdraorRoDMavY=",
+      "schedule": "Monday, Wednesday 7:00 PM - 9:00 PM",
+      "description": "Discover the beauty of the Arabic language with a skilled instructor. This class covers the Arabic alphabet, grammar, vocabulary, and conversation. Suitable for beginners."
+    },
+    {
+      "language": "Russian",
+      "instructor": "Elena Petrova",
+      "availableSeats": 12,
+      "price": 160,
+      "enrollStudents": 88,
+      "image": "https://www.shutterstock.com/image-photo/russian-language-hand-drawing-on-blackboard-430499551",
+      "schedule": "Tuesday, Thursday 6:00 PM - 8:00 PM",
+      "description": "Learn to speak and understand Russian in a fun and engaging environment. This class focuses on practical skills, including grammar, vocabulary, and conversation. All levels are welcome."
+    },
+    {
+      "language": "Portuguese",
+      "instructor": "Antonio Silva",
+      "availableSeats": 10,
+      "price": 130,
+      "enrollStudents": 90,
+      "image": "https://media.istockphoto.com/id/1175038196/vector/portugues-open-book-with-language-hand-drawn-doodles.jpg?s=612x612&w=0&k=20&c=5F6xdow-4aXK-UO3b74o2eSfyWTxgQKvioh1AYksmow=",
+      "schedule": "Monday, Wednesday, Friday 7:00 PM - 9:00 PM",
+      "description": "Explore the rich culture of Brazil and Portugal through learning Portuguese. This class covers grammar, pronunciation, and conversation. Suitable for beginners and intermediate learners."
+    },
+    {
+      "language": "Korean",
+      "instructor": "Hye Jin Park",
+      "availableSeats": 8,
+      "price": 150,
+      "enrollStudents": 42,
+      "image": "https://www.shutterstock.com/image-photo/learn-korean-language-online-education-concept-509513602",
+      "schedule": "Tuesday, Thursday 7:30 PM - 9:30 PM",
+      "description": "Dive into the Korean language and its fascinating culture. This class focuses on practical communication skills, vocabulary building, and Korean script. All levels are welcome."
+    }
+  ]
+  
