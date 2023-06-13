@@ -5,6 +5,12 @@ import Instructors from './pages/instructor/Instructors'
 import Class from "./pages/class/Class";
 import Login from "./pages/Login/Login";
 import Singup from "./pages/Singup/Singup";
+import Errorpage from "./pages/Error/Errorpage";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import PrivateRoute from "./privateRoute/PrivateRoute";
+import Smyclass from "./pages/stdMyClass/Smyclass";
+import SenrollClass from "./pages/StdEnrollClass/SenrollClass";
+import Mypayment from "./pages/PaymentHistory/Mypayment";
 
 const router = createBrowserRouter([
     {
@@ -35,7 +41,30 @@ const router = createBrowserRouter([
                 path:"/singup",
                 element: <Singup></Singup>
                  
-            }
+            },
+             
+        ]
+    },
+    {
+        path:'*',
+        element:<Errorpage></Errorpage>
+    },
+    {
+        path:'/Dashboard',
+        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+        children:[
+           {
+            path:"/Dashboard",
+            element:<Smyclass></Smyclass>
+           },
+           {
+            path:"/Dashboard/enrollclass",
+            element:<SenrollClass></SenrollClass>
+           },
+           {
+            path:"/Dashboard/paymentHistory",
+            element:<Mypayment></Mypayment>
+           },
         ]
     }
   

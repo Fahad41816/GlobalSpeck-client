@@ -54,7 +54,7 @@ const Navbar = () => {
           <Link><li><a className=" font-semibold">HOME</a></li></Link>
           <Link to={'/instractor'}><li><a className=" font-semibold">INSTRUCTORS</a></li></Link>
           <Link to={"/class"}><li><a className=" font-semibold">CLASSES</a></li></Link>
-          {user? <Link><li><a className=" font-semibold">DASHBOARD</a></li></Link> : <></>}
+          {user? <Link to={'/Dashboard'}><li><a className=" font-semibold">DASHBOARD</a></li></Link> : <></>}
         </ul>
       </div>
       <div className="navbar-end mr-5">
@@ -64,7 +64,7 @@ const Navbar = () => {
       </div>
        {user? <label tabIndex={0} className="mr-5  btn btn-ghost btn-circle avatar">
         <div className="w-full rounded-full">
-          <img src={user.displayName} />
+          <img src={user.photoURL} />
         </div>
       </label>:<></>}
     </div>

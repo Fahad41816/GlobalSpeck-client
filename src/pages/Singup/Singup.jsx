@@ -19,26 +19,29 @@ const Singup = () => {
 
     const onSubmit = (data) => {
 
-        console.log(data)
-
         const Name = `${data.firstname} ${data.lastname}`
 
+        // databse sent data 
+        const user = {
+            name : Name,
+            email : data.email,
+            photoUrl : data.photoUrl,
+            phone: data.phone,
+            role: "user"
+        }
 
         if(data.comfirmPassword !== data.password){
-
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
-                text: ' Confirm password wrong!',
-                 
+                text: ' Confirm password wrong!',                 
             })
             return
-
         }
 
         createUser(data.email, data.password)
         .then(()=>{
-            AddUserNameAndPhoto(data.photoUrl,Name)
+            AddUserNameAndPhoto(Name, data.photoUrl)
             .then(()=>{
                 Swal.fire({
                     position: 'top-end',
@@ -48,6 +51,20 @@ const Singup = () => {
                     timer: 1500
                 })
                 Navigate('/') 
+
+                // user insert in Database 
+                fetch('http://localhost:5000/user', {
+                    method:"POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(user)
+                })
+                .then(res => res.json())
+                .catch(err => {
+                    console.log(err)
+                })
+
 
             })
             .catch(err => {
