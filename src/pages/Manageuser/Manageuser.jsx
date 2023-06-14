@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import Title from '../shared/title/Title';
 import { FaTrashAlt } from 'react-icons/fa';
+import Swal from 'sweetalert2';
  
 
 const Manageuser = () => {
@@ -12,6 +13,38 @@ const Manageuser = () => {
            return  fetch('http://localhost:5000/user').then(res => res.json()).catch(err => console.log(err))
         }
     })
+
+
+    const Makeupdaterole = (id, role) => {
+
+        const userid = { id }
+        const updatedata = { Updated : role}
+        console.log(id)
+        fetch(`http://localhost:5000/userAdmin/${userid.id}`,
+        {
+            method: "PATCH",
+            headers:{
+                "content-type" : "application/json"
+            },
+            body: JSON.stringify(updatedata)
+        }
+        )
+        .then(res => res.json())
+        .then(()=>{
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: `update to ${role}`,
+                showConfirmButton: false,
+                timer: 1500
+              })
+            refetch()
+        })
+        .catch(err => console.log(err))
+
+    }
+
+    
 
     console.log(user)
 
@@ -44,15 +77,15 @@ const Manageuser = () => {
                             </div>
                         </td>
                         <td>                    
-                           <h3>{data.name}</h3>
+                           <h3>{data.name} ({data.role})</h3>
                         </td>
                         <td>                    
                            <h3>{data.email}</h3>
                         </td>
                         <td>
-                        <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Admin</button>
-                        <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Instructor</button>
-                             
+                            <button  onClick={() => Makeupdaterole(data._id, "admin")} disabled={data.role === "admin" ? true: false }  type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Admin</button>
+                            <button   onClick={() => Makeupdaterole(data._id, "instructor")} disabled={data.role === "instructor" ? true: false }  type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Instructor</button>
+                                
                         </td>
                    
                     </tr>
