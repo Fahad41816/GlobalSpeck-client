@@ -13,6 +13,8 @@ import SenrollClass from "./pages/StdEnrollClass/SenrollClass";
 import Mypayment from "./pages/PaymentHistory/Mypayment";
 import Manageuser from "./pages/Manageuser/Manageuser";
 import Manageclass from "./pages/Manageclasses/Manageclass";
+import Instructorclass from "./pages/intructorclass/Instructorclass";
+import Addclass from "./pages/addclassitem/Addclass";
 
 const router = createBrowserRouter([
     {
@@ -70,7 +72,16 @@ const router = createBrowserRouter([
                 {
                     path:"manageclass",
                     element: <Manageclass></Manageclass>
-                }
+                },
+                {
+                    path:"instructorClass",
+                    element: <Instructorclass></Instructorclass>,
+                },
+                {
+                    path:"Addclassitem",
+                    element: <Addclass></Addclass>
+                },
+
         ]},
         {
             path:'*',

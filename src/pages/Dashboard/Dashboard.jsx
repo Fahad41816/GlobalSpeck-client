@@ -9,8 +9,8 @@ const Dashboard = () => {
 
     const {user} = useContext(Authcontext)
 
-   const admin = true;  
-   const instructor = false 
+   const admin = false;  
+   const instructor = true 
 
     return (
         <div className="drawer lg:drawer-open">
@@ -48,8 +48,12 @@ const Dashboard = () => {
                 </Link>
               </> : instructor ?
               <>
+              <Link to={"/Dashboard/instructorClass"}>
                 <li className='text-white font-semibold hover:bg-blue-600 mt-5 hover:text-blue-950   text-lg border-b-2'><a>My Classes</a></li>
+              </Link>
+              <Link to={"/Dashboard/Addclassitem"}>
                 <li className='text-white font-semibold hover:bg-blue-600 mt-5 hover:text-blue-950   text-lg border-b-2'><a>Add a Class</a></li>
+              </Link>
                  
               </> :
               <>
@@ -63,9 +67,7 @@ const Dashboard = () => {
                 <li className='text-white font-semibold hover:bg-blue-600 mt-5 hover:text-blue-950   text-lg border-b-2'><a>Payment History</a></li>
               </Link>
               </>
-            }
-
-            
+            }            
              
              
           </ul>
