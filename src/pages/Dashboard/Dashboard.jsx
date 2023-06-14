@@ -9,7 +9,7 @@ const Dashboard = () => {
 
     const {user} = useContext(Authcontext)
 
-   const admin = false;  
+   const admin = true;  
    const instructor = false 
 
     return (
@@ -40,8 +40,12 @@ const Dashboard = () => {
             {
               admin ? 
               <>
-                <li className='text-white font-semibold hover:bg-blue-600 mt-5 hover:text-blue-950   text-lg border-b-2'><a>Manage Classes</a></li>
-                <li className='text-white font-semibold hover:bg-blue-600 mt-5 hover:text-blue-950   text-lg border-b-2'><a>Manage Users</a></li>
+                <Link to={'/Dashboard/manageclass'}>
+                  <li className='text-white font-semibold hover:bg-blue-600 mt-5 hover:text-blue-950   text-lg border-b-2'><a>Manage Classes</a></li>
+                </Link>
+                <Link to={'/Dashboard/manageUser'}>
+                 <li className='text-white font-semibold hover:bg-blue-600 mt-5 hover:text-blue-950   text-lg border-b-2'><a>Manage Users</a></li>
+                </Link>
               </> : instructor ?
               <>
                 <li className='text-white font-semibold hover:bg-blue-600 mt-5 hover:text-blue-950   text-lg border-b-2'><a>My Classes</a></li>
@@ -49,7 +53,7 @@ const Dashboard = () => {
                  
               </> :
               <>
-              <Link to={'/Dashboard'}> 
+              <Link to={'/Dashboard/Myselectclass'}> 
                 <li className='text-white font-semibold hover:bg-blue-600 mt-5 hover:text-blue-950   text-lg border-b-2'><a>My Selected Classes</a></li>
               </Link>
               <Link to={"/Dashboard/enrollclass"}>

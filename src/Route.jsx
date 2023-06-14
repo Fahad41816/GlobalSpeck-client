@@ -11,6 +11,8 @@ import PrivateRoute from "./privateRoute/PrivateRoute";
 import Smyclass from "./pages/stdMyClass/Smyclass";
 import SenrollClass from "./pages/StdEnrollClass/SenrollClass";
 import Mypayment from "./pages/PaymentHistory/Mypayment";
+import Manageuser from "./pages/Manageuser/Manageuser";
+import Manageclass from "./pages/Manageclasses/Manageclass";
 
 const router = createBrowserRouter([
     {
@@ -46,27 +48,34 @@ const router = createBrowserRouter([
         ]
     },
     {
-        path:'*',
-        element:<Errorpage></Errorpage>
-    },
-    {
         path:'/Dashboard',
         element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         children:[
-           {
-            path:"/Dashboard",
-            element:<Smyclass></Smyclass>
-           },
-           {
-            path:"/Dashboard/enrollclass",
-            element:<SenrollClass></SenrollClass>
-           },
-           {
-            path:"/Dashboard/paymentHistory",
-            element:<Mypayment></Mypayment>
-           },
-        ]
-    }
+               {
+                    path:"Myselectclass",
+                    element:<Smyclass></Smyclass>
+                },
+                {
+                    path:"enrollclass",
+                    element:<SenrollClass></SenrollClass>
+                },
+                {
+                    path:"paymentHistory",
+                    element:<Mypayment></Mypayment>
+                },
+                {
+                    path:"manageUser",
+                    element:<Manageuser></Manageuser>
+                },
+                {
+                    path:"manageclass",
+                    element: <Manageclass></Manageclass>
+                }
+        ]},
+        {
+            path:'*',
+            element:<Errorpage></Errorpage>
+        },
   
 ])
 
