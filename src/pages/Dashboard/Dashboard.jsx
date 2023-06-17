@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import {Authcontext} from '../../context/Authprovider'
 import { Link, Outlet } from 'react-router-dom';
 import CheckUserRole from '../../Hook/CheckUserRole';
-
+import { Fade } from "react-awesome-reveal";
 
 
 const Dashboard = () => {
@@ -13,6 +13,7 @@ const Dashboard = () => {
     const [userRole] = CheckUserRole()
 
     return (
+       <Fade direction='left'>
         <div className="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col items-center justify-center">
@@ -83,6 +84,7 @@ const Dashboard = () => {
         
         </div>
       </div>
+      </Fade>  
     );
 };
 
