@@ -16,6 +16,10 @@ import Manageclass from "./pages/Manageclasses/Manageclass";
 import Instructorclass from "./pages/intructorclass/Instructorclass";
 import Addclass from "./pages/addclassitem/Addclass";
 import Payment from "./pages/payment/Peyment";
+import DashboardHome from "./pages/DashboardHome/DashboardHome";
+import AdminRoute from "./privateRoute/AdminRoute";
+import InstructorRoute from "./privateRoute/InstructorRoute";
+import UserRoute from "./privateRoute/UserRoute";
 
 const router = createBrowserRouter([
     {
@@ -54,33 +58,37 @@ const router = createBrowserRouter([
         path:'/Dashboard',
         element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         children:[
+                {
+                    path:"/Dashboard",
+                    element: <PrivateRoute><DashboardHome></DashboardHome></PrivateRoute>
+                },
                {
                     path:"Myselectclass",
-                    element:<Smyclass></Smyclass>
+                    element:<UserRoute><Smyclass></Smyclass></UserRoute> 
                 },
                 {
                     path:"enrollclass",
-                    element:<SenrollClass></SenrollClass>
+                    element:<UserRoute><SenrollClass></SenrollClass></UserRoute> 
                 },
                 {
                     path:"paymentHistory",
-                    element:<Mypayment></Mypayment>
+                    element:<UserRoute><Mypayment></Mypayment></UserRoute> 
                 },
                 {
                     path:"manageUser",
-                    element:<Manageuser></Manageuser>
+                    element:<AdminRoute><Manageuser></Manageuser></AdminRoute>
                 },
                 {
                     path:"manageclass",
-                    element: <Manageclass></Manageclass>
+                    element: <AdminRoute><Manageclass></Manageclass></AdminRoute>
                 },
                 {
                     path:"instructorClass",
-                    element: <Instructorclass></Instructorclass>,
+                    element: <InstructorRoute><Instructorclass></Instructorclass></InstructorRoute> ,
                 },
                 {
                     path:"Addclassitem",
-                    element: <Addclass></Addclass>
+                    element: <AdminRoute><Addclass></Addclass></AdminRoute>
                 },
                 {
                     path:"payment/:cart",

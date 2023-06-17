@@ -40,6 +40,9 @@ const Dashboard = () => {
             {
               userRole === "admin" ? 
               <>
+                <Link to={'/'}>
+                  <li className='text-white font-semibold hover:bg-blue-600 mt-5 hover:text-blue-950   text-lg border-b-2'><a>Home page</a></li>
+                </Link>
                 <Link to={'/Dashboard/manageclass'}>
                   <li className='text-white font-semibold hover:bg-blue-600 mt-5 hover:text-blue-950   text-lg border-b-2'><a>Manage Classes</a></li>
                 </Link>
@@ -48,6 +51,9 @@ const Dashboard = () => {
                 </Link>
               </> : userRole === "instructor" ?
               <>
+              <Link to={'/'}>
+                  <li className='text-white font-semibold hover:bg-blue-600 mt-5 hover:text-blue-950   text-lg border-b-2'><a>Home page</a></li>
+                </Link>
               <Link to={"/Dashboard/instructorClass"}>
                 <li className='text-white font-semibold hover:bg-blue-600 mt-5 hover:text-blue-950   text-lg border-b-2'><a>My Classes</a></li>
               </Link>
@@ -57,6 +63,9 @@ const Dashboard = () => {
                  
               </> :
               <>
+              <Link to={'/'}>
+                  <li className='text-white font-semibold hover:bg-blue-600 mt-5 hover:text-blue-950   text-lg border-b-2'><a>Home page</a></li>
+                </Link>
               <Link to={'/Dashboard/Myselectclass'}> 
                 <li className='text-white font-semibold hover:bg-blue-600 mt-5 hover:text-blue-950   text-lg border-b-2'><a>My Selected Classes</a></li>
               </Link>
