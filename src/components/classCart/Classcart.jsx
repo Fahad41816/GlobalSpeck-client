@@ -1,12 +1,15 @@
 import { useContext } from "react";
 import { Authcontext } from "../../context/Authprovider";
 import toast, { Toaster } from 'react-hot-toast';
+import CheckUserRole from "../../Hook/CheckUserRole";
 
  
 const Classcart = ({classes}) => {
     
     const {user} = useContext(Authcontext) 
     const {language,instructor,image,schedule,_id,price,enrollStudents,availableSeats} = classes   
+
+    const [userRole] = CheckUserRole()
 
 
     const notify = () => toast.success('class added');
@@ -62,7 +65,7 @@ const Classcart = ({classes}) => {
                     <div>Price : {price}</div> 
                     <div>Enroll : {enrollStudents}</div> 
                     <div>available Seats : {availableSeats}</div> 
-                    <button onClick={()=>selectClass(classes)}  disabled={ availableSeats === 0 ? true : false}  className={` cursor-pointer inline-flex items-center px-3 py-2 text-sm font-medium text-center mt-5 text-white bg-blue-700 rounded-lg  focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 ${availableSeats === 0 ? "": "hover:bg-blue-800"}  dark:focus:ring-blue-800`}>
+                    <button onClick={()=>selectClass(classes)}  disabled={ availableSeats === 0 || userRole === "admin" || userRole === "instructor"? true : false}  className={` cursor-pointer inline-flex items-center px-3 py-2 text-sm font-medium text-center mt-5 text-white bg-blue-700 rounded-lg  focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 ${availableSeats === 0 ? "": "hover:bg-blue-800"}  dark:focus:ring-blue-800`}>
                     Select
                         <svg aria-hidden="true" className="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </button>

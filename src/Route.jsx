@@ -88,11 +88,11 @@ const router = createBrowserRouter([
                 },
                 {
                     path:"Addclassitem",
-                    element: <AdminRoute><Addclass></Addclass></AdminRoute>
+                    element: <InstructorRoute><Addclass></Addclass></InstructorRoute>
                 },
                 {
                     path:"payment/:cart",
-                    element: <Payment></Payment>,
+                    element: <UserRoute><Payment></Payment></UserRoute>,
                     loader: ({params}) => {return fetch(`http://localhost:5000/FindAddClass/${params.cart}`) }
                 },
 

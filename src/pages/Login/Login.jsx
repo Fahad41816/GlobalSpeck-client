@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
- 
+import { FaEyeSlash , FaEye } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { Authcontext } from '../../context/Authprovider';
 import Swal from 'sweetalert2';
@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
 const Login = () => {
 
     const [error, seterror] = useState();
-
+    const [showpass, setshowpass] = useState(false);
     const {loginuser, loginwithgoogle} = useContext(Authcontext)
     const Navigate = useNavigate()
 
@@ -99,14 +99,17 @@ const Login = () => {
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
                         Password
                         </label>
+                        <div className=' relative'>
                         <input {...register("password", {required:true})}
                         className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-500"
                         id="password"
                         name="password"
-                        type="password"
-                        placeholder="Enter your password"
-                        
-                        />
+                        type={!showpass ? "password" : "text"}
+                        placeholder="Enter your password"                        
+                        />                        
+                        <div  className=' cursor-pointer absolute top-2 right-2'>  {!showpass ?<FaEye onClick={()=> setshowpass(true)}></FaEye>  : <FaEyeSlash onClick={()=> setshowpass(false)}></FaEyeSlash>}</div>
+
+                        </div>
                         {errors.password && <span className='text-red-500 text-sm'>password field is required</span>}
                     </div>
 

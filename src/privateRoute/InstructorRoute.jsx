@@ -6,7 +6,7 @@ import { Navigate } from 'react-router-dom';
  
 import CheckUserRole from '../Hook/CheckUserRole';
 
-const InstructorRoute = () => {
+const InstructorRoute = ({children}) => {
     
         const {user, loadeing} = useContext(Authcontext)
         const [userRole] = CheckUserRole()
