@@ -10,7 +10,7 @@ const Manageclass = () => {
     const {refetch, data : classes = [], isLoading} = useQuery({
         queryKey:['class'],
         queryFn:()=>{
-           return fetch("http://localhost:5000/AllclassesAdmin").then(res => res.json()).catch(err => console.log(err))
+           return fetch("https://globespeck.vercel.app/AllclassesAdmin").then(res => res.json()).catch(err => console.log(err))
         }
     })
  
@@ -39,7 +39,7 @@ const Manageclass = () => {
     const approveclass = (id) => {
 
          const userid = id         
-         fetch(`http://localhost:5000/ApproveClass/${userid}`,
+         fetch(`https://globespeck.vercel.app/ApproveClass/${userid}`,
          {
              method: "PATCH",
          }
@@ -73,7 +73,7 @@ const Manageclass = () => {
         
         const Data = {feedback : text}
 
-        fetch(`http://localhost:5000/notApproveClass/${id}`,
+        fetch(`https://globespeck.vercel.app/notApproveClass/${id}`,
         {
             method: "PATCH",
             headers:{

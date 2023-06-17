@@ -14,7 +14,7 @@ const Instructorclass = () => {
     const {refetch, data : classes =[], isLoading} = useQuery({
         queryKey:['instructor'],
         queryFn: () => {
-           return fetch(`http://localhost:5000/insMyclass?email=${email}`)
+           return fetch(`https://globespeck.vercel.app/insMyclass?email=${email}`)
            .then(res => res.json())
            .catch(err => console.log(err))
         }
@@ -25,7 +25,7 @@ const Instructorclass = () => {
     const deleteclass =(id) => {
 
         const userId = {id}
-        fetch(`http://localhost:5000/deletClass/${userId.id}`,{
+        fetch(`https://globespeck.vercel.app/deletClass/${userId.id}`,{
             method:"DELETE"
         }).then(res => res.json()).then(()=>{refetch()}).catch(err => console.log(err))
     }

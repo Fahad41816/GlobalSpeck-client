@@ -43,7 +43,7 @@ const AddclassName = () => {
 
             }
             console.log(insertData)
-            fetch('http://localhost:5000/Addtoclass',
+            fetch('https://globespeck.vercel.app/Addtoclass',
             {
                 method:"POST",
                 headers:{

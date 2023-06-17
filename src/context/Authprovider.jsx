@@ -47,7 +47,7 @@ const Authprovider = ({children}) => {
             //jwt get set token
 
             if(user){
-                axios.post("http://localhost:5000/Jwt",{email:user.email})
+                axios.post("https://globespeck.vercel.app/Jwt",{email:user.email})
                 .then(res => {
                     localStorage.setItem("access-token", res.data.token)
                     setloadeing(false)

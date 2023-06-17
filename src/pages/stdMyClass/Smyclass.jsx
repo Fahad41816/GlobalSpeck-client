@@ -14,7 +14,7 @@ const Smyclass = () => {
     const { refetch,isLoading, error, data: classcart = [] } = useQuery({
         queryKey: ['classCart',user.email ],
         queryFn: () =>
-        fetch(`http://localhost:5000/showClass?email=${email}`).then(
+        fetch(`https://globespeck.vercel.app/showClass?email=${email}`).then(
             (res) => res.json(),
         )
         
@@ -24,7 +24,7 @@ const Smyclass = () => {
         
         const classid = {id}
 
-        fetch('http://localhost:5000/deletAddclass',
+        fetch('https://globespeck.vercel.app/deletAddclass',
         {
             method:"DELETE",
             headers:{

@@ -16,7 +16,7 @@ const Home = () => {
 
      useEffect(() => {
     
-        fetch('http://localhost:5000/instructor').then(res => res.json()).then(data=> setinstructor(data))
+        fetch('https://globespeck.vercel.app/instructor').then(res => res.json()).then(data=> setinstructor(data))
        
      }, []);
 

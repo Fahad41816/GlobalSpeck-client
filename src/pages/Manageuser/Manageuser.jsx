@@ -27,7 +27,7 @@ const Manageuser = () => {
         const userid = { id }
         const updatedata = { Updated : role}
         console.log(id)
-        fetch(`http://localhost:5000/userAdmin/${userid.id}`,
+        fetch(`https://globespeck.vercel.app/userAdmin/${userid.id}`,
         {
             method: "PATCH",
             headers:{

@@ -32,7 +32,7 @@ const Classcart = ({classes}) => {
             availableSeats
         }
 
-        fetch('http://localhost:5000/Addclass',{
+        fetch('https://globespeck.vercel.app/Addclass',{
             method:"POST",
             headers:{
                 "content-type": "application/json"

@@ -29,17 +29,17 @@ const router = createBrowserRouter([
             {
                 path:"/",
                 element:<Home></Home>,
-                loader: () => { return fetch('http://localhost:5000/classes').then(res=> res.json())}
+                loader: () => { return fetch('https://globespeck.vercel.app/classes').then(res=> res.json())}
             },
             {
                 path:"/instractor",
                 element:<Instructors></Instructors>,
-                loader: () => { return fetch('http://localhost:5000/Allinstructor').then(res=> res.json())}
+                loader: () => { return fetch('https://globespeck.vercel.app/Allinstructor').then(res=> res.json())}
             },
             {
                 path:"/class",
                 element: <Class></Class>,
-                loader: () => { return fetch('http://localhost:5000/Allclasses').then(res=> res.json())}
+                loader: () => { return fetch('https://globespeck.vercel.app/Allclasses').then(res=> res.json())}
             },
             {
                 path:"/login",
@@ -93,7 +93,7 @@ const router = createBrowserRouter([
                 {
                     path:"payment/:cart",
                     element: <UserRoute><Payment></Payment></UserRoute>,
-                    loader: ({params}) => {return fetch(`http://localhost:5000/FindAddClass/${params.cart}`) }
+                    loader: ({params}) => {return fetch(`https://globespeck.vercel.app/FindAddClass/${params.cart}`) }
                 },
 
         ]},
