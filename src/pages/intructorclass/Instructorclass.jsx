@@ -20,6 +20,7 @@ const Instructorclass = () => {
         }
     })
     
+    console.log(classes)
     
     const deleteclass =(id) => {
 
@@ -30,7 +31,7 @@ const Instructorclass = () => {
     }
 
 
-    if(!classes.lenght){
+    if(!classes.length){
         return (
             <h2 className='text-blue-600 text-2xl font-bold'>No class added</h2>
         )

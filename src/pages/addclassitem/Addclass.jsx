@@ -2,6 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { Authcontext } from '../../context/Authprovider';
+import Swal from 'sweetalert2';
 
 const AddclassName = () => {
 
@@ -11,7 +12,7 @@ const AddclassName = () => {
     const image_hosting_url = `https://api.imgbb.com/1/upload?key=${imagetoken}`
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => {
+    const onSubmit = (data) => {
     
         // console.log(data)
 
@@ -52,9 +53,20 @@ const AddclassName = () => {
 
             })
             .then(res => res.json())
+            .then(()=>{
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'class add successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+            })
             .catch(err => console.log(err))
             
         })
+
+        
     };
 
     return (

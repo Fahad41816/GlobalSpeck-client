@@ -50,12 +50,13 @@ const Authprovider = ({children}) => {
                 axios.post("http://localhost:5000/Jwt",{email:user.email})
                 .then(res => {
                     localStorage.setItem("access-token", res.data.token)
+                    setloadeing(false)
                 }) 
             }
             localStorage.removeItem("access-token")
 
 
-            setloadeing(false)
+            
         })   
 
         return () => {

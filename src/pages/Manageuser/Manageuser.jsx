@@ -3,14 +3,21 @@ import React from 'react';
 import Title from '../shared/title/Title';
 import { FaTrashAlt } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../Hook/UseAxiosSecure';
  
 
 const Manageuser = () => {
 
+ 
+    const [axiosSecure] = useAxiosSecure()
+
+ 
     const {data : user = [], refetch, isLoading} = useQuery({
-        queryKey:["user"],
-        queryFn: () => {
-           return  fetch('http://localhost:5000/user').then(res => res.json()).catch(err => console.log(err))
+        queryKey:["alluser"],
+        queryFn: async() => {
+           const res = await  axiosSecure('/user')
+           console.log(res)
+           return res.data
         }
     })
 
@@ -46,7 +53,7 @@ const Manageuser = () => {
 
     
 
-    console.log(user)
+     
 
     return ( 
         <>

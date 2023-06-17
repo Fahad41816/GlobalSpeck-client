@@ -10,7 +10,7 @@ const Dashboard = () => {
     const {user} = useContext(Authcontext)
 
    const admin = false;  
-   const instructor = true 
+   const instructor = false 
 
     return (
         <div className="drawer lg:drawer-open">

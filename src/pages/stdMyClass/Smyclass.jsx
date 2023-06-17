@@ -3,6 +3,8 @@ import { useContext } from 'react';
 import { Authcontext } from '../../context/Authprovider';
 import Title from '../shared/title/Title';
 import { FaTrashAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+
  
 
 const Smyclass = () => {
@@ -35,6 +37,8 @@ const Smyclass = () => {
         .catch(err => console.log(err))
 
     }
+
+     
 
     if(classcart.length === 0){
 
@@ -71,7 +75,9 @@ const Smyclass = () => {
                         </div>
                         <div className='flex flex-col ml-10'>
                             <button onClick={()=> Deletthiscart(cart._id)} type="button" className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"><FaTrashAlt></FaTrashAlt></button>
-                            <button type="button" className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900">Pay</button>
+                           <Link to={`/Dashboard/payment/${cart.accessId}`}>
+                                <button   type="button" className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900">Pay</button>
+                           </Link>
                         </div>
                     </div>
                 ))

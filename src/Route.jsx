@@ -15,6 +15,7 @@ import Manageuser from "./pages/Manageuser/Manageuser";
 import Manageclass from "./pages/Manageclasses/Manageclass";
 import Instructorclass from "./pages/intructorclass/Instructorclass";
 import Addclass from "./pages/addclassitem/Addclass";
+import Payment from "./pages/payment/Peyment";
 
 const router = createBrowserRouter([
     {
@@ -80,6 +81,11 @@ const router = createBrowserRouter([
                 {
                     path:"Addclassitem",
                     element: <Addclass></Addclass>
+                },
+                {
+                    path:"payment/:cart",
+                    element: <Payment></Payment>,
+                    loader: ({params}) => {return fetch(`http://localhost:5000/FindAddClass/${params.cart}`) }
                 },
 
         ]},
