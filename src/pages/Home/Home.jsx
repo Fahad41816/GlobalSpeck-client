@@ -5,6 +5,7 @@ import Classcart from '../../components/classCart/Classcart';
 import Title from '../shared/title/Title';
 import { useEffect, useState } from 'react';
 import Instructorcart from '../../components/intructorcart/instructorcart';
+import About from '../../components/About/About';
 
 
 const Home = () => {
@@ -46,6 +47,10 @@ const Home = () => {
             }
 
             </div>
+          </div>
+
+          <div>
+            <About></About>
           </div>
           
         </div>
