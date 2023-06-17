@@ -2,6 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import {Authcontext} from '../../context/Authprovider'
 import { Link, Outlet } from 'react-router-dom';
+import CheckUserRole from '../../Hook/CheckUserRole';
 
 
 
@@ -9,8 +10,7 @@ const Dashboard = () => {
 
     const {user} = useContext(Authcontext)
 
-   const admin = false;  
-   const instructor = false 
+    const [userRole] = CheckUserRole()
 
     return (
         <div className="drawer lg:drawer-open">
@@ -38,7 +38,7 @@ const Dashboard = () => {
           <ul className="menu bg-blue-700   w-64 h-full text-base-content">
             {/* Sidebar content here */}            
             {
-              admin ? 
+              userRole === "admin" ? 
               <>
                 <Link to={'/Dashboard/manageclass'}>
                   <li className='text-white font-semibold hover:bg-blue-600 mt-5 hover:text-blue-950   text-lg border-b-2'><a>Manage Classes</a></li>
@@ -46,7 +46,7 @@ const Dashboard = () => {
                 <Link to={'/Dashboard/manageUser'}>
                  <li className='text-white font-semibold hover:bg-blue-600 mt-5 hover:text-blue-950   text-lg border-b-2'><a>Manage Users</a></li>
                 </Link>
-              </> : instructor ?
+              </> : userRole === "instructor" ?
               <>
               <Link to={"/Dashboard/instructorClass"}>
                 <li className='text-white font-semibold hover:bg-blue-600 mt-5 hover:text-blue-950   text-lg border-b-2'><a>My Classes</a></li>

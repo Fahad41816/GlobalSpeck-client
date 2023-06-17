@@ -4,6 +4,7 @@ import useAxiosSecure from '../../Hook/UseAxiosSecure';
 import { useEffect } from 'react';
 import { useContext } from 'react';
 import { Authcontext } from '../../context/Authprovider';
+// import './common.module.css'
 
 const Checkoutform = ({cart}) => {
 
@@ -18,7 +19,7 @@ const Checkoutform = ({cart}) => {
     const elements = useElements()
 
 
-    const {price} = cart
+    const {price, language, image, accessId} = cart
      
         
     const [axiosSecure] = useAxiosSecure()
@@ -81,12 +82,28 @@ const Checkoutform = ({cart}) => {
 
         if(comfirmError){
           console.log(comfirmError)
+          return
         }
 
         setproccessing(false)
         if(paymentIntent.status = "succeeeded"){
 
+          console.log(paymentIntent.id)
           settranjection(paymentIntent.id)
+
+          const paymentDetails = {
+            user : user.displayName,
+            email : user.email,
+            tranjecttionId : paymentIntent.id,
+            price : price,
+            cartName : language,
+            cartImage : image,
+          }
+          console.log(paymentDetails)
+
+          axiosSecure.post('/payment', paymentDetails).then(res => console.log(res))
+
+          axiosSecure.patch(`/updateEnroll/${accessId}`).then(res => console.log(res))
 
         }
     }
